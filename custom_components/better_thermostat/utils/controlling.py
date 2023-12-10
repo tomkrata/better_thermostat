@@ -104,7 +104,7 @@ async def control_trv(self, heater_entity_id=None):
         _temperature = _remapped_states.get("temperature", None)
         _calibration = _remapped_states.get("local_temperature_calibration", None)
 
-        _new_hvac_mode = self.last_main_hvac_mode
+        _new_hvac_mode = _remapped_states.get("system_mode", None)
 
         # New cooler section
         if self.cooler_entity_id is not None:
