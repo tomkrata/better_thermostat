@@ -170,10 +170,6 @@ async def control_trv(self, heater_entity_id=None):
                     context=self.context,
                 )
 
-        # if we don't need ot heat, we force HVACMode to be off
-        if self.call_for_heat is False:
-            _new_hvac_mode = HVACMode.OFF
-
         # Manage TRVs with no HVACMode.OFF
         _no_off_system_mode = (
             HVACMode.OFF not in self.real_trvs[heater_entity_id]["hvac_modes"]
