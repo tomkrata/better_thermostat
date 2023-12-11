@@ -244,9 +244,6 @@ async def update_hvac_action(self):
     # return action off if all are off
     elif all(a == HVACAction.OFF for a in hvac_actions):
         hvac_action = HVACAction.OFF
-    # TODO - find a better way to handle this
-    elif self.bt_target_temp is None or self.cur_temp is None or self.tolerance is None:
-        hvac_action = HVACAction.IDLE
     # else check if is heating
     elif (
         self.bt_target_temp > self.cur_temp + self.tolerance

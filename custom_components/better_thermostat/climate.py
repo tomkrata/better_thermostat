@@ -249,7 +249,7 @@ class BetterThermostat(ClimateEntity, RestoreEntity, ABC):
         self.next_valve_maintenance = datetime.now() + timedelta(
             hours=randint(1, 24 * 5)
         )
-        self.cur_temp = None
+        self.cur_temp = 0
         self.cur_humidity = 0
         self.window_open = None
         self.bt_target_temp_step = 1
